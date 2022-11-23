@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
 import './cart.css';
 
@@ -22,6 +22,9 @@ const Cart = ({cart, setCart, handleChange}) => {
     useEffect(()=>{
         handlePrice();
     })
+    const handleChangeadd=(item)=> {
+        item.amount++ 
+    }
 
   return (
     <article>
@@ -32,7 +35,7 @@ const Cart = ({cart, setCart, handleChange}) => {
                         <p>{item.name}</p>
                     </div>
                     <div>
-                        <button onClick={()=>handleChange(item, +1)}> + </button>
+                        <button onClick={()=>handleChangeadd()}> + </button>
                         <button>{item.amount}</button>
                         <button onClick={()=>handleChange(item, -1)}> - </button>
                     </div>

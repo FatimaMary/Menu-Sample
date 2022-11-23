@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500&display=swap');
+
+/* font-family: 'Poppins', sans-serif; */
+
 body{
   margin: 0 auto;
   padding: 20px;
@@ -5,5 +9,6 @@ body{
   border: 1px solid red;
   border-radius: 15px;
   box-shadow: 5px gainsboro;
+  font-family: 'Poppins', sans-serif;
   /* background: wheat; */
 }

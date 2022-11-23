@@ -15,6 +15,7 @@
 
 .nav_input {
     border: none;
+    outline: none;
 }
 
 .nav_icon {

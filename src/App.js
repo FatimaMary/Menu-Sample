@@ -33,10 +33,10 @@ const App = () => {
                 ind = index;
         });
         const tempArr = cart;
-        tempArr[ind].button += d;
+        tempArr[ind].amount += d;
 		
-        if (tempArr[ind].button === 0)
-            tempArr[ind].button = 1;
+        if (tempArr[ind].amount === 0)
+            tempArr[ind].amount = 1;
         setCart([...tempArr])
     }
 

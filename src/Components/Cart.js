@@ -4,6 +4,7 @@ import './cart.css';
 
 const Cart = ({cart, setCart, handleChange}) => {
     const [price, setPrice] = useState(0);
+    // const [amount, setAmount] = useState(1);
 
     const handlePrice = ()=>{
         let ans = 0;
@@ -22,10 +23,14 @@ const Cart = ({cart, setCart, handleChange}) => {
     useEffect(()=>{
         handlePrice();
     })
-    const handleChangeadd=(item)=> {
-        item.amount++ 
-    }
+    // const handleChangeAdd=(item)=> {
+    //     item.amount++ 
+    // }
+    // const handleChangeSub = (item) => {
+    //     item.amount--
+    // }
 
+    
   return (
     <article>
         {
@@ -35,7 +40,7 @@ const Cart = ({cart, setCart, handleChange}) => {
                         <p>{item.name}</p>
                     </div>
                     <div>
-                        <button onClick={()=>handleChangeadd()}> + </button>
+                        <button onClick={()=>handleChange(item, + 1)}> + </button>
                         <button>{item.amount}</button>
                         <button onClick={()=>handleChange(item, -1)}> - </button>
                     </div>

@@ -14,7 +14,7 @@ const Cards = ({item, handleClick}) => {
               <img src={symbol} alt="Image" className="vegsymbol" />
               <p>{name}</p>
               <img src={starRate} alt="Image" />
-              <p>Price - {price}</p>
+              <p>Price - Rs.{price}</p>
           </div>
           <div className="image_box">
               <img src={image} alt="Image" className="foodimage"/>

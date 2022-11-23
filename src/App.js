@@ -4,6 +4,7 @@ import Cart from './Components/Cart';
 import Menu from './Components/Menu';
 import './App.css'
 import View from './Components/view';
+import Order from './Components/ordersummary';
 
 const App = () => {
     const [show, setShow] = useState(true);
@@ -51,6 +52,7 @@ const App = () => {
             warning && <div className='warning'>Item is already added to your cart</div>
         }
         <View setShow={setShow}/>
+        
     </React.Fragment>
   )
 }

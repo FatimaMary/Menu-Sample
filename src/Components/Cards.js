@@ -5,6 +5,7 @@ import './cards.css'
 
 
 const Cards = ({item, handleClick}) => {
+
     const {symbol, name, starRate, price, image} = item;
   return (
     <div>
@@ -17,7 +18,7 @@ const Cards = ({item, handleClick}) => {
           </div>
           <div className="image_box">
               <img src={image} alt="Image" className="foodimage"/>
-              <button onClick={()=>handleClick(item)} className="add_btn">ADD</button>
+              <button onClick={()=>handleClick(item)}  className="add_btn">ADD</button>
           </div>
       </div>
       

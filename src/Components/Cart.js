@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import './cart.css';
+import Order from "./ordersummary";
 
 const Cart = ({cart, setCart, handleChange}) => {
     const [price, setPrice] = useState(0);
-    // const [amount, setAmount] = useState(1);
 
     const handlePrice = ()=>{
         let ans = 0;
@@ -23,12 +23,6 @@ const Cart = ({cart, setCart, handleChange}) => {
     useEffect(()=>{
         handlePrice();
     })
-    // const handleChangeAdd=(item)=> {
-    //     item.amount++ 
-    // }
-    // const handleChangeSub = (item) => {
-    //     item.amount--
-    // }
 
     
   return (
@@ -51,8 +45,11 @@ const Cart = ({cart, setCart, handleChange}) => {
                 </div>
             ))}
         <div className='total'>
-            <span>Total Price of your Cart</span>
+            <span>Total Price of your Order</span>
             <span>Rs - {price}</span>
+        </div>
+        <div>
+            <Order/>
         </div>
     </article>
   )

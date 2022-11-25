@@ -51,7 +51,7 @@ const App = () => {
         {
             warning && <div className='warning'>Item is already added to your cart</div>
         }
-        <View setShow={setShow}/>
+        <View setShow={setShow} />
         
     </React.Fragment>
   )

@@ -3,9 +3,11 @@ import { useEffect } from "react";
 import './cart.css';
 import ItemCounter from "./itemcounter";
 import Order from "./ordersummary";
+// import Order from "./ordersummary";
 
 const Cart = ({cart, setCart, handleChange}) => {
     const [price, setPrice] = useState(0);
+    const [show, setShow] = useState(true)
 
     const handlePrice = ()=>{
         let ans = 0;
@@ -35,8 +37,13 @@ const Cart = ({cart, setCart, handleChange}) => {
                         <p>{item.name}</p>
                     </div>
                     <div>
-                        <ItemCounter/>
+                        <button onClick={() => handleChange(item,  1)}> + </button>
+                        <button>{item.amount}</button>
+                        <button onClick={() => handleChange(item, -1)}> - </button>
+                        {/* <ItemCounter/> */}
                     </div>
+                       
+                   
                     <div>
                         <span>{item.price}</span>
                         <button onClick={()=>handleRemove(item.id)} >Remove</button>
@@ -48,9 +55,10 @@ const Cart = ({cart, setCart, handleChange}) => {
             <span>Rs - {price}</span>
         </div>
         <div>
-            <Order/>
+            <button onClick={<Order setShow={setShow}/>}>Order Summary</button>
         </div>
     </article>
+
   )
 }
 

@@ -34,16 +34,16 @@ const App = () => {
                 ind = index;
         });
         const tempArr = cart;
-        tempArr[ind].amount += d;
+        tempArr[ind].count += d;
 		
-        if (tempArr[ind].amount === 0)
-            tempArr[ind].amount = 1;
+        if (tempArr[ind].count === 0)
+            tempArr[ind].count = 1;
         setCart([...tempArr])
     }
 
   return (
     <React.Fragment>
-        <Navbar size={cart.length} setShow={setShow} />
+        <Navbar  setShow={setShow} />
         
         {
             show ? <Menu handleClick={handleClick} /> : <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
@@ -51,8 +51,11 @@ const App = () => {
         {
             warning && <div className='warning'>Item is already added to your cart</div>
         }
-        <View setShow={setShow} />
-        
+        <View setShow={setShow} size={cart.length} />
+        {/* {
+            show ? <Order handleClick={handleClick} /> : <Cart/> 
+        }
+         */}
     </React.Fragment>
   )
 }

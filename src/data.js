@@ -6,7 +6,7 @@ const list = [
     starRate: "images/star.png",
     price: 60,
     image: "images/food.png",
-    amount: 1,
+    count: 1,
 },
 {
     id: 2,
@@ -15,7 +15,7 @@ const list = [
     starRate: "images/star.png",
     price: 40,
     image: "images/food.png",
-    amount: 1,
+    count: 1,
 },
 {
     id: 3,
@@ -24,7 +24,7 @@ const list = [
     starRate: "images/star.png",
     price: 80,
     image: "images/food.png",
-    amount: 1,
+    count: 1,
 },
 {
     id: 4,
@@ -33,7 +33,7 @@ const list = [
     starRate: "images/star.png",
     price: 120,
     image: "images/food.png",
-    amount: 1,
+    count: 1,
 },
 {
     id: 5,
@@ -42,7 +42,7 @@ const list = [
     starRate: "images/star.png",
     price: 60,
     image: "images/food.png",
-    amount: 1,
+    count: 1,
 },
 {
     id: 6,
@@ -51,7 +51,7 @@ const list = [
     starRate: "images/star.png",
     price: 70,
     image: "images/food.png",
-    amount: 1,
+    count: 1,
 },
 {
     id: 7,
@@ -60,7 +60,7 @@ const list = [
     starRate: "images/star.png",
     price: 60,
     image: "images/food.png",
-    amount: 1,
+    count: 1,
 },
 {
     id: 8,
@@ -69,7 +69,7 @@ const list = [
     starRate: "images/star.png",
     price: 120,
     image: "images/food.png",
-    amount: 1,
+    count: 1,
 },
 {
     id: 9,
@@ -78,7 +78,7 @@ const list = [
     starRate: "images/star.png",
     price: 140,
     image: "images/food.png",
-    amount: 1,
+    count: 1,
 },
 {
     id: 10,
@@ -87,7 +87,7 @@ const list = [
     starRate: "images/star.png",
     price: 80,
     image: "images/food.png",
-    amount: 1,
+    count: 1,
 },
 {
     id: 11,
@@ -96,7 +96,7 @@ const list = [
     starRate: "images/star.png",
     price: 120,
     image: "images/food.png",
-    amount: 1,
+    count: 1,
 },
 {
     id: 12,
@@ -105,7 +105,7 @@ const list = [
     starRate: "images/star.png",
     price: 60,
     image: "images/food.png",
-    amount: 1,
+    count: 1,
 },
 {
     id: 13,
@@ -114,7 +114,7 @@ const list = [
     starRate: "images/star.png",
     price: 70,
     image: "images/food.png",
-    amount: 1,
+    count: 1,
 },
 {
     id: 14,
@@ -123,7 +123,7 @@ const list = [
     starRate: "images/star.png",
     price: 60,
     image: "images/food.png",
-    amount: 1,
+    count: 1,
 }
 ]
 

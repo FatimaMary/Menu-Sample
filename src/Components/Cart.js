@@ -12,7 +12,7 @@ const Cart = ({cart, setCart, handleChange}) => {
     const handlePrice = ()=>{
         let ans = 0;
         cart.map((item)=>(
-            ans += item.amount * item.price
+            ans += item.count * item.price
         ))
         setPrice(ans);
     }
@@ -37,10 +37,10 @@ const Cart = ({cart, setCart, handleChange}) => {
                         <p>{item.name}</p>
                     </div>
                     <div>
-                        <button onClick={() => handleChange(item,  1)}> + </button>
-                        <button>{item.amount}</button>
-                        <button onClick={() => handleChange(item, -1)}> - </button>
-                        {/* <ItemCounter/> */}
+                        {/* <button onClick={() => handleChange(item,  1)}> + </button>
+                        <button>{item.count}</button>
+                        <button onClick={() => handleChange(item, -1)}> - </button> */}
+                        <ItemCounter/>
                     </div>
                        
                    
@@ -55,7 +55,7 @@ const Cart = ({cart, setCart, handleChange}) => {
             <span>Rs - {price}</span>
         </div>
         <div>
-            <button onClick={<Order setShow={setShow}/>}>Order Summary</button>
+            <a href="#/ordersummary">Order Summary</a>
         </div>
     </article>
 

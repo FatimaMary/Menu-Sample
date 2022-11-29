@@ -1,16 +1,8 @@
 import React, { useState } from "react";
 import Cart from "./Cart";
 
-function Order(cart, price) {
-    // const [price, setPrice] = useState(0);
-
-    // const handlePrice = ()=>{
-    //     let ans = 0;
-    //     cart.map((item)=>(
-    //         ans += item.amount * item.price
-    //     ))
-    //     setPrice(ans);
-    // }
+function Order(props) {
+    const {cart, price } = props
 
     return(
         <div>

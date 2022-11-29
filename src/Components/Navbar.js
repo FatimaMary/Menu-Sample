@@ -11,7 +11,11 @@ function Navbar() {
   return (
     <div className="nav_boxes">
       <div className="nav_search" >
-        <input type="text" placeholder="Search for Dishes. . ." className="nav_input" value={inputText} onChange={inputHandler} />
+        <input type="text" 
+                placeholder="Search for Dishes. . ." 
+                className="nav_input" 
+                value={inputText} 
+                onChange={inputHandler} />
         <SearchIcon className="nav_icon" />
       </div>
       <div className="nav_box">

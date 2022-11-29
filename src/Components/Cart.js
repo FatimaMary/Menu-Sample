@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useNavigate } from "react";
+// import {Route, BrowserRouter,}
 import { useEffect } from "react";
 import './cart.css';
 import ItemCounter from "./itemcounter";
@@ -7,7 +8,13 @@ import Order from "./ordersummary";
 
 const Cart = ({cart, setCart, handleChange}) => {
     const [price, setPrice] = useState(0);
-    const [show, setShow] = useState(true)
+    const navigate = useNavigate();
+
+        function Goto() {
+            navigate("/ordersummary")
+        }
+
+
 
     const handlePrice = ()=>{
         let ans = 0;
@@ -27,7 +34,15 @@ const Cart = ({cart, setCart, handleChange}) => {
         handlePrice();
     })
 
-    
+    const buttonClicked =  () => {
+            return(
+                <div>
+                    {/* console.log("button Clicked"); */}
+                    <Order/>
+                </div>
+            )
+    }
+
   return (
     <article>
         {
@@ -40,7 +55,7 @@ const Cart = ({cart, setCart, handleChange}) => {
                         {/* <button onClick={() => handleChange(item,  1)}> + </button>
                         <button>{item.count}</button>
                         <button onClick={() => handleChange(item, -1)}> - </button> */}
-                        <ItemCounter/>
+                        <ItemCounter item={item} count={count}/>
                     </div>
                        
                    
@@ -55,7 +70,7 @@ const Cart = ({cart, setCart, handleChange}) => {
             <span>Rs - {price}</span>
         </div>
         <div>
-            <a href="#/ordersummary">Order Summary</a>
+            <Order onClick={Goto}></Order>
         </div>
     </article>
 

@@ -60,3 +60,22 @@
     font-weight: bold;
     font-family: 'Poppins', sans-serif;
 }
+
+.cart-order {
+    height: 50px;
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    /* box-sizing: border-box; */
+    box-shadow: 4px 4px 4px #000000;
+    border-radius: 10px;
+    font-size: 25px;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #008000;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    padding-top: 15px;
+    cursor: pointer;
+}

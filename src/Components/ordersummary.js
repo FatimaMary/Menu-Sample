@@ -4,9 +4,15 @@ import Cart from "./Cart";
 function Order(props) {
     const {cart, price } = props
 
+    const Message = () => {
+        return(
+            alert("Your order Confirmed")
+        )
+    }
+
     return(
         <div>
-            <table>
+            {/* <table>
                 <thead>
                     <tr>
                         <th>Item Name</th>
@@ -27,8 +33,8 @@ function Order(props) {
                         <td colSpan="2">{price}</td>
                     </tr>
                 </tbody>
-            </table>
-            <button>Confirm your order</button>
+            </table> */}
+            <button onClick={Message}>Confirm your order</button>
         </div>
     )
 }

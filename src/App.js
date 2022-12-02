@@ -52,10 +52,7 @@ const App = () => {
             warning && <div className='warning'>Item is already added to your cart</div>
         }
         <View setShow={setShow} size={cart.length} />
-        {/* {
-            show ? <Order handleClick={handleClick} /> : <Cart/> 
-        }
-         */}
+         {/* <Order/> */}
     </React.Fragment>
   )
 }

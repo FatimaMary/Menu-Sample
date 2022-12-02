@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Cart from "./Cart";
 
 function Order(props) {
-    const {cart, price } = props
+    const {cart, price, count, name, item } = props
 
     const Message = () => {
         return(
@@ -11,8 +11,8 @@ function Order(props) {
     }
 
     return(
-        <div>
-            {/* <table>
+        <div className="order-table">
+            <table>
                 <thead>
                     <tr>
                         <th>Item Name</th>
@@ -21,10 +21,10 @@ function Order(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {cart.map( (item, id)=> {
-                        return(<tr key={id}>
+                    {cart?.map( (item)=> {
+                        return(<tr key={item.id}>
                             <td>{item.name}</td>
-                            <td>{item.amount}</td>
+                            <td>{item.count}</td>
                             <td>{item.price}</td>
                         </tr>)
                     })}
@@ -33,8 +33,8 @@ function Order(props) {
                         <td colSpan="2">{price}</td>
                     </tr>
                 </tbody>
-            </table> */}
-            <button onClick={Message}>Confirm your order</button>
+            </table>
+            
         </div>
     )
 }

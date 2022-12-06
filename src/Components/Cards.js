@@ -6,9 +6,9 @@ import Cart from "./Cart";
 import list from "../data";
 
 
-const Cards = ({item, handleClick, count, handleChange}) => {
-  const [show, setShow] = useState(true);
-  const [cart, setCart] = useState([]);
+const Cards = ({item, handleClick, count, handleChange, cart}) => {
+  // const [show, setShow] = useState(true);
+  // const [cart, setCart] = useState([]);
 
   const { symbol, name, starRate, price, image } = item;
   return (
@@ -22,9 +22,9 @@ const Cards = ({item, handleClick, count, handleChange}) => {
         </div>
         <div className="image_box">
           <img src={image} alt="Image" className="foodimage" />
-          <div>
-            {/* {cart?.map((item)) ? (<ItemCounter item={item} count={count} handleChange={handleChange}/>) : (<div><button onClick={() => handleClick(item)} className="add_btn">ADD</button></div>)} */}
-          </div>
+          {/* <div>
+            {cart ? (<ItemCounter item={item} count={count} handleChange={handleChange}/>) : (<div><button onClick={() => handleClick(item)} className="add_btn">ADD</button></div>)}
+          </div> */}
           <button onClick={() => handleClick(item)} className="add_btn">ADD</button>
         </div>
       </div>

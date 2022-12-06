@@ -4,6 +4,7 @@ import Cart from './Components/Cart';
 import Menu from './Components/Menu';
 import './App.css'
 import View from './Components/view';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Order from './Components/ordersummary';
 
 const App = () => {
@@ -52,7 +53,12 @@ const App = () => {
             warning && <div className='warning'>Item is already added to your cart</div>
         }
         <View setShow={setShow} size={cart.length} />
-         {/* <Order/> */}
+        {/* <BrowserRouter>
+            <Routes>
+                <Route path='/view' element={<Cart/>}/>
+                <Route path='/ordersummary' element={<Order/>}/>
+            </Routes>
+        </BrowserRouter> */}
     </React.Fragment>
   )
 }

@@ -1,13 +1,15 @@
-import React, { useState, useNavigate } from "react";
+import React, { useState } from "react";
 // import {Route, BrowserRouter,}
 import { useEffect } from "react";
 import './cart.css';
 import ItemCounter from "./itemcounter";
+import { useNavigate } from 'react-router-dom'
 import Order from "./ordersummary";
 // import Order from "./ordersummary";
 
 const Cart = ({ cart, setCart, handleChange, item, count }) => {
     const [price, setPrice] = useState(0);
+    // const navigate = useNavigate();
 
     const handlePrice = () => {
         let ans = 0;
@@ -27,10 +29,9 @@ const Cart = ({ cart, setCart, handleChange, item, count }) => {
         handlePrice();
     })
 
-    function Goto() {
-        return(
-            alert("Your order Confirmed")
-        )
+    const Goto = () => {
+        alert("Your order Confirmed");
+        // navigate("/ordersummary")
     }
 
     return (

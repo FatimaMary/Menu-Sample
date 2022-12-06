@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Cart from "./Cart";
+import './Order.css';
 
 function Order(props) {
     const {cart, price, count, name, item } = props
@@ -11,26 +12,26 @@ function Order(props) {
     }
 
     return(
-        <div className="order-table">
-            <table>
-                <thead>
+        <div className="order">
+            <table className="order-table">
+                <thead className="column">
                     <tr>
-                        <th>Item Name</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
+                        <th style={{width:"50%"}}>Item Name</th>
+                        <th >Quantity</th>
+                        <th >Price</th>
                     </tr>
                 </thead>
                 <tbody>
                     {cart?.map( (item)=> {
                         return(<tr key={item.id}>
-                            <td>{item.name}</td>
-                            <td>{item.count}</td>
-                            <td>{item.price}</td>
+                            <td style={{width:"50%"}}>{item.name}</td>
+                            <td >{item.count}</td>
+                            <td >{item.price}</td>
                         </tr>)
                     })}
                     <tr>
-                        <td colSpan="2">Grand Total</td>
-                        <td colSpan="2">{price}</td>
+                        <td colSpan="2"><b>Grand Total</b></td>
+                        <td colSpan="2"><b>{price}</b></td>
                     </tr>
                 </tbody>
             </table>

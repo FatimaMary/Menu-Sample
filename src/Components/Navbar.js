@@ -2,12 +2,32 @@ import React, { useState } from "react";
 import SearchIcon from '@mui/icons-material/Search';
 import './navbar.css'
 
-function Navbar() {
-  const [inputText, setInputText] = useState("");
+function Navbar({item}) {
+  // const [inputText, setInputText] = useState([]);
+  // let inputHandler = (e) => {
+  //   var lowerCase = e.target.value.toLowerCase();
+  //   setInputText(lowerCase);
+  // };
+
+  const [inputText, setInputText] = useState([]);
   let inputHandler = (e) => {
     var lowerCase = e.target.value.toLowerCase();
-    setInputText(lowerCase);
+    setInputText(item.filter(item=> {
+      return item.name.includes(e.target.value)
+    }));
   };
+
+  // searchInput.addEventListener("input", (e) => {
+  //   let value = e.target.value
+
+  //   if (value && value.trim().length > 0){
+  //        value = value.trim().toLowerCase()
+
+  //       //returning only the results of setList if the value of the search is included in the person's name
+  //       setList(people.filter(person => {
+  //           return person.name.includes(value)
+  //       }))
+
   return (
     <div className="nav_boxes">
       <div className="nav_search" >

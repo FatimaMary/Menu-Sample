@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import list from '../data';
 
-function ItemCounter({ item, handleChange }) {
+function CartItemCounter({ cartItem, updateCart }) {
 
-    const {count} = item;
+    // const itemCounter = (cartItem, updateCart)
     return (
         <div>
-            <button onClick={() => handleChange(item, 1)}> + </button>
-            <button>{count}</button>
-            <button onClick={() => handleChange(item, -1)}> - </button>
+            <button onClick={() => updateCart(cartItem, 1)}> + </button>
+            <button>{cartItem.count}</button>
+            <button onClick={() => updateCart(cartItem, -1)}> - </button>
         </div>
     )
 }
 
-export default ItemCounter
+export default CartItemCounter

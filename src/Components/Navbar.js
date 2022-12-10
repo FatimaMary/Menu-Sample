@@ -10,6 +10,7 @@ function Navbar({item}) {
   // };
 
   const [inputText, setInputText] = useState([]);
+
   let inputHandler = (e) => {
     var lowerCase = e.target.value.toLowerCase();
     setInputText(item.filter(item=> {
@@ -24,9 +25,9 @@ function Navbar({item}) {
   //        value = value.trim().toLowerCase()
 
   //       //returning only the results of setList if the value of the search is included in the person's name
-  //       setList(people.filter(person => {
-  //           return person.name.includes(value)
-  //       }))
+  //       setList(item.filter(person => {
+  //           return item.name.includes(value)
+  //       }))}})
 
   return (
     <div className="nav_boxes">

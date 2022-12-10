@@ -3,7 +3,8 @@ import Cart from "./Cart";
 import './Order.css';
 
 function Order(props) {
-    const {cart, price, count, name, item } = props
+    const { cart, price } = props
+    console.log(props);
 
     const Message = () => {
         return(
@@ -29,6 +30,7 @@ function Order(props) {
                             <td >{item.price}</td>
                         </tr>)
                     })}
+                    <tr><td colSpan="3"><hr/></td></tr>
                     <tr>
                         <td colSpan="2"><b>Grand Total</b></td>
                         <td colSpan="2"><b>{price}</b></td>

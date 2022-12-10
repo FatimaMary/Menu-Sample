@@ -4,12 +4,12 @@ import Cards from "./Cards"
 
 
 
-const Menu = ({handleClick, cart}) => {
+const Menu = ({item, updateCart, getCountInCart}) => {
     return (
       <section>
           {
               list.map((item)=>(
-                  <Cards key={item.id} item={item} handleClick={handleClick} />
+                  <Cards key={(item.id)} item={item} getCountInCart={getCountInCart} updateCart={updateCart} />
               ))
           }
       </section>

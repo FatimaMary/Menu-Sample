@@ -1,53 +1,50 @@
 import React, { useState } from "react";
-// import {Route, BrowserRouter,}
 import { useEffect } from "react";
 import './cart.css';
-import ItemCounter from "./itemcounter";
-import { useNavigate } from 'react-router-dom'
 import Order from "./ordersummary";
-// import Order from "./ordersummary";
+import CartItemCounter from "./itemcounter";
 
-const Cart = ({ cart, setCart, handleChange, item, count }) => {
+const Cart = ({ cart, setCart, updateCart, count }) => {
     const [price, setPrice] = useState(0);
-    // const navigate = useNavigate();
 
     const handlePrice = () => {
         let ans = 0;
-        cart.map((item) => (
-            ans += item.count * item.price
+        cart.map((SingleartItem) => (
+            ans += SingleartItem.count * SingleartItem.price
         ))
         setPrice(ans);
     }
 
     const handleRemove = (id) => {
-        const arr = cart.filter((item) => item.id !== id);
+        const arr = cart.filter((singleCartItem) => singleCartItem.id !== id);
         setCart(arr);
         // handlePrice();
     }
-
     useEffect(() => {
-        handlePrice();
-    })
+        handlePrice(); })
+    //     setCart(localStorage.getItem('cart')
+    //     ? JSON.parse(localStorage.getItem('cart')): [])
+    //   }, []);
+    
 
     const Goto = () => {
-        alert("Your order Confirmed");
-        // navigate("/ordersummary")
+        alert("Your order Confirmed ");
     }
 
     return (
         <article>
             {
-                cart?.map((item) => (
-                    <div className="cart_box" key={item.id}>
+                cart?.map((singleCartItem) => (
+                    <div className="cart_box" key={singleCartItem.id}>
                         <div className="cart_img">
-                            <p>{item.name}</p>
+                            <p>{singleCartItem.name}</p>
                         </div>
                         <div>
-                            <ItemCounter item={item} count={count} handleChange={handleChange} />
+                            <CartItemCounter cartItem={singleCartItem} updateCart={updateCart} />
                         </div>
                         <div>
-                            <span>{item.price}</span>
-                            <button onClick={() => handleRemove(item.id)} >Remove</button>
+                            <span>{singleCartItem.price}</span>
+                            <button onClick={() => handleRemove(singleCartItem.id)} >Remove</button>
                         </div>
                     </div>
                 ))}

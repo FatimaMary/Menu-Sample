@@ -4,11 +4,8 @@ import Cart from './Components/Cart';
 import Menu from './Components/Menu';
 import './App.css'
 import View from './Components/view';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Order from './Components/ordersummary';
-import ItemCounter from './Components/itemcounter';
 
-const App = () => {
+const App = ({ searchInput }) => {
     const [show, setShow] = useState(true);
     const [cart , setCart] = useState([]);
     const [warning, setWarning] = useState(false);
@@ -52,26 +49,6 @@ const App = () => {
         localStorage.setItem("cart", JSON.stringify([...cart, {...item, count: 1}]));
       }
     };
-    
-    
-    // ADD Button click => updateCart(item)
-    
-    // ==> updateCart(item, 1)
-    
-    // + button, - button click => updateCart(item, d)
-    
-    // => updateCart(item, 1)
-    // => updateCart(item, -1)
-    
-    
-    // itemCounter.js
-    // --------------
-    
-    // const itemCounter = (cartItem, updateCart) 
-    
-    // {cartItem.count}
-    
-    
     // Main Menu Page
     // --------------
     
@@ -82,7 +59,7 @@ const App = () => {
     // {getCountInCart(item.id) == 0 ? <AddButton /> : <itemcounter />}
   return (
     <React.Fragment>
-        <Navbar  setShow={setShow} />
+        <Navbar  setShow={setShow} value={searchInput} />
         
         {
             show ? <Menu updateCart={updateCart}  getCountInCart={getCountInCart}/> : <Cart cart={cart} setCart={setCart} updateCart={updateCart} getCountInCart={getCountInCart} />

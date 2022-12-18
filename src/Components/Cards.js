@@ -4,10 +4,8 @@ import CartItemCounter from "./itemcounter";
 
 
 const Cards = ({item, updateCart, getCountInCart, singleCartItem, cart }) => {
-  // const [show, setShow] = useState(true);
-  // const [cart, setCart] = useState([]);
-
-  const { symbol, name, starRate, price, image } = item;
+ 
+  const { symbol, name, starRate, price, image, count } = item;
   return (
     <div>
       <div className="cards">
@@ -19,8 +17,9 @@ const Cards = ({item, updateCart, getCountInCart, singleCartItem, cart }) => {
         </div>
         <div className="image_box">
           <img src={image} alt="Image" className="foodimage" />
-          {/* {cart?. map(item => (getCountInCart(item.id) === 0)) ? (<button onClick={() => updateCart(item, 1)} className="add_btn">ADD</button>) : <CartItemCounter updateCart={updateCart} />} */}
-          <button onClick={() => updateCart(item, 1)} className="add_btn">ADD</button>
+          {/* {getCountInCart ? <CartItemCounter cartItem={item}updateCart={updateCart} /> : (<button onClick={() => updateCart(item, 1)} className="add_btn">ADD</button>) } */}
+          {getCountInCart(item.id) === 0 ? (<button onClick={() => updateCart(item, 1)} className="add_btn">ADD</button>) : <CartItemCounter cartItem={count} updateCart={updateCart} />}
+          {/* <button onClick={() => updateCart(item, 1)} className="add_btn">ADD</button> */}
         </div>
       </div>
 

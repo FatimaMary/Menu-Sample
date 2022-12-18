@@ -17,7 +17,7 @@ function Order(props) {
             <table className="order-table">
                 <thead className="column">
                     <tr>
-                        <th style={{width:"50%"}}>Item Name</th>
+                        <th >Item Name</th>
                         <th >Quantity</th>
                         <th >Price</th>
                     </tr>
@@ -25,9 +25,9 @@ function Order(props) {
                 <tbody>
                     {cart?.map( (item)=> {
                         return(<tr key={item.id}>
-                            <td style={{width:"50%"}}>{item.name}</td>
+                            <td >{item.name}</td>
                             <td >{item.count}</td>
-                            <td >{item.price}</td>
+                            <td >{item.count * item.price}</td>
                         </tr>)
                     })}
                     <tr><td colSpan="3"><hr/></td></tr>

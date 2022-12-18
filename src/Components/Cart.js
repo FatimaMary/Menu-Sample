@@ -7,10 +7,11 @@ import CartItemCounter from "./itemcounter";
 const Cart = ({ cart, setCart, updateCart, count }) => {
     const [price, setPrice] = useState(0);
 
+
     const handlePrice = () => {
         let ans = 0;
-        cart.map((SingleartItem) => (
-            ans += SingleartItem.count * SingleartItem.price
+        cart.map((singleCartItem) => (
+            ans += singleCartItem.count * singleCartItem.price 
         ))
         setPrice(ans);
     }
@@ -44,6 +45,7 @@ const Cart = ({ cart, setCart, updateCart, count }) => {
                         </div>
                         <div>
                             <span>{singleCartItem.price}</span>
+                            <span>{singleCartItem.count * singleCartItem.price}</span>
                             <button onClick={() => handleRemove(singleCartItem.id)} >Remove</button>
                         </div>
                     </div>

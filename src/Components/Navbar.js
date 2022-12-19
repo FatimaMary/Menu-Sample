@@ -4,7 +4,7 @@ import list from "../data";
 import './navbar.css'
 
 function Navbar() {
-  const [searchInput, setSearchInput] = useState("");
+  // const [searchInput, setSearchInput] = useState("");
   
   // const handleChange = (e) => {
   //   e.preventDefault();
@@ -18,26 +18,28 @@ function Navbar() {
   // });
   // }
 
-//  const [searchTerm, setSearchTerm] = React.useState("");
-//  const [searchResults, setSearchResults] = React.useState([]);
-//  const handleChange = event => {
-//     setSearchTerm(event.target.value);
-//   };
-//  React.useEffect(() => {
-//     const results = list.filter(menu =>
-//       menu.toLowerCase().includes(searchTerm)
-//     );
-//     setSearchResults(results);
-//   }, [searchTerm]);
+  const [data, setData] = useState(list)
+
+ const [searchTerm, setSearchTerm] = React.useState("");
+ const [searchResults, setSearchResults] = React.useState([]);
+ const handleChange = event => {
+    setSearchTerm(event.target.value);
+  };
+ React.useEffect(() => {
+    const results = data.filter(menu =>
+      menu.toLowerCase().includes(searchTerm)
+    );
+    setSearchResults(results);
+  }, [searchTerm]);
   
   return (
     <div className="nav_boxes">
       <div className="nav_search" >
         <input type="text" 
                 placeholder="Search for Dishes. . ." 
-                className="nav_input" />
-                {/* // value={searchTerm} 
-                // onChange={handleChange} /> */}
+                className="nav_input" 
+                value={searchTerm} 
+                onChange={handleChange} />
         <SearchIcon className="nav_icon" />
       </div>
       <div className="nav_box">

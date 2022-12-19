@@ -59,7 +59,7 @@ const App = ({ searchInput }) => {
     // {getCountInCart(item.id) == 0 ? <AddButton /> : <itemcounter />}
   return (
     <React.Fragment>
-        <Navbar  setShow={setShow} value={searchInput} />
+        <Navbar  setShow={setShow}  />
         
         {
             show ? <Menu updateCart={updateCart}  getCountInCart={getCountInCart}/> : <Cart cart={cart} setCart={setCart} updateCart={updateCart} getCountInCart={getCountInCart} />

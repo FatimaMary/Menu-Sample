@@ -21,7 +21,7 @@ function Navbar() {
   const [data, setData] = useState(list)
 
  const [searchTerm, setSearchTerm] = React.useState("");
- const [searchResults, setSearchResults] = React.useState([]);
+ const [searchResults, setSearchResults] = React.useState(setData);
  const handleChange = event => {
     setSearchTerm(event.target.value);
   };
